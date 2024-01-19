@@ -35,9 +35,9 @@ function isMobile() {
 - prefetch 告诉浏览器下一个页面可能需要加载的资源，优先级低
 - preload  告诉浏览器当前页面加载完成之后立即需要加载的资源，优先级高
 
-### 8. asycn、defer区别
-- prefetch 在脚本加载完成后不会立即执行 从而不会阻断DOM的解析
-- preload  在脚本加载完成之后立即执行，从而会阻断DOM的解析
+### 8. async、defer区别
+- defer 在脚本加载完成后不会立即执行 从而不会阻断DOM的解析
+- async  在脚本加载完成之后立即执行，从而会阻断DOM的解析
 
 ### 9. load与domContentLoaded区别
 - 初始的页面加载、解析完成就会触发DomContentLoaded事件
