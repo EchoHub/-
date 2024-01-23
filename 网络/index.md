@@ -74,19 +74,6 @@ keep-alive即长连接，http1.0默认不开启keep-alive，每次访问、应�
 - 锚
 - 参数
 
-### 浏览器缓存策略
-浏览器缓存分为强制缓存、协商缓存两种，强制缓存的优先级大于协商缓存：强制缓存即服务器告诉客户端资源缓存时间，在这个时间有效期内直接使用本地缓存；协商缓存即客户端向服务端发起资源请求，服务端根据请求携带的Etag、Last-Modified等协商字段验证资源是否有更新，若更新返回新的资源，若未更新则返回304，告知客户端直接使用浏览器缓存。
-- 强制缓存标识：Cache-Control、Expires
-    - Cache-Control表示一个相对时间，即上一次正确请求完成之后多少秒内使用缓存
-    - Expires表示一个绝对时间，即这个时间之前使用缓存，之后不使用缓存
-    - Cache-Control优先级要高于Expires
-    - 强制缓存直接返回200
-- 协商缓存标识：Etag、Last-Modified
-    - Etag/If-None-Match 资源的唯一标识，当资源发生更新，则重新生成新的标识
-    - Last-Modified/If-Modified-Since 表示资源最后一次更新的时间、
-    - Etag的优先级大于Last-Modified
-    - 若命中缓存则只返回304状态，若未命中则返回新的资源，状态返回200
-
 ### 常见的状态码
 - 2xx 请求成功
     - 200 请求成功
@@ -114,4 +101,15 @@ keep-alive即长连接，http1.0默认不开启keep-alive，每次访问、应�
     - 没有自定义头
     - Content-Type设置为 text/plain、multipart/form-data、application/x-www-form-urlencoded
 - 复杂请求
-    - 其他所有，例如跨域等
+    - 其他所有
+
+### 解决跨域的方式有哪些
+- CORS
+- JSONP
+- 反向代理
+
+### 什么是XSS攻击
+XSS是一种跨站脚本植入技术，即通过对网站植入恶意脚本，从而获取用户信息、流量劫持、DOM结构篡改、模拟请求攻击服务器等
+
+### 什么是CSRF攻击
+跨站请求伪造攻击
