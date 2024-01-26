@@ -69,10 +69,9 @@ keep-alive即长连接，http1.0默认不开启keep-alive，每次访问、应�
 - 协议
 - 域名
 - 端口号
-- 虚拟目录
-- 文件名
+- 路径
+- 查询参数
 - 锚
-- 参数
 
 ### 常见的状态码
 - 2xx 请求成功
@@ -85,7 +84,7 @@ keep-alive即长连接，http1.0默认不开启keep-alive，每次访问、应�
     - 304 协商缓存，命中
 - 4xx 客户端错误
     - 400 请求报文语法异常
-    - 401 协议认证失败
+    - 401 身份认证
     - 403 无访问权限
     - 404 未找到请求资源
     - 405 请求方法错误
@@ -93,7 +92,25 @@ keep-alive即长连接，http1.0默认不开启keep-alive，每次访问、应�
 - 5xx 服务端错误
     - 500 服务端异常
     - 502 网关异常
+    - 503 服务器无法访问
     - 504 网关超时
+
+### 常见请求头
+- Accept：浏览器支持的MIME类型，对应服务端的Content-Type
+- Accept-Encoding：浏览器支持的压缩类型
+- Content-Type：客户端发送内容的类型
+- Cache-Control：缓存控制
+- If-Modified-Since：缓存控制，对应Last-Modified
+- If-None-Match：缓存控制，对应Etag
+- Expires：缓存控制
+- Max-age：最大过期时间
+- Host：请求服务器的URL
+- Origin：最初的请求
+- Referer：页面的来源URL
+- Cookie：cookie信息
+- Connection：客户端与服务端连接时对长连接的处理
+- User-Agent：客户端的一些信息
+
 
 ### 什么是简单请求、复杂请求
 - 简单请求
